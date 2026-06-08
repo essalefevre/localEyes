@@ -3,25 +3,7 @@ import * as Icons from 'lucide-react';
 export default function App() {
   return (
     <div id="showcase-root" className="min-h-screen bg-[#FAF9F6] text-[#1E2129] font-sans antialiased selection:bg-teal-100 selection:text-teal-900 pb-20">
-      {/* Top Banner */}
-      <div className="w-full bg-[#2D5A27] py-4 px-6 flex items-center justify-between relative z-20">
-        <div className="flex items-center gap-4 max-w-5xl mx-auto w-full">
-          <img
-            src="/localeyes-logo.png"
-            alt="localEyes logo"
-            className="h-12 w-12 object-contain"
-          />
-          <div>
-            <h2 className="text-white font-display font-bold text-xl tracking-tight leading-none">
-              localEyes
-            </h2>
-            <p className="text-white/70 text-xs mt-0.5 tracking-wide">
-              Share experiences. Discover more.
-            </p>
-          </div>
-        </div>
-      </div>
-      
+
       {/* Decorative Blueprint Grid Overlay */}
       <div className="absolute inset-x-0 top-0 h-[800px] pointer-events-none opacity-[0.02] select-none"
            style={{
@@ -38,9 +20,11 @@ export default function App() {
 
             {/* Logo from image */}
             <div className="flex items-center gap-3">
-              <div className="w-11 h-11 rounded-xl bg-teal-950/5 border border-teal-950/10 flex items-center justify-center p-2 text-teal-800 shadow-sm">
-                <Icons.Eye size={22} className="stroke-[1.75]" />
-              </div>
+              <img
+                src="/localeyes-logo.png"
+                alt="localEyes logo"
+                className="w-11 h-11 object-contain"
+              />
               <span className="text-xs uppercase tracking-[0.2em] font-bold text-slate-500 font-display">
                 Project Showcase
               </span>
@@ -64,8 +48,7 @@ export default function App() {
 
           </div>
         </div>
-      </header>
-
+      </header> 
 
       {/* Main Grid View */}
       <main className="relative max-w-5xl mx-auto px-6 py-12 md:py-16 space-y-20 md:space-y-32 z-10">
