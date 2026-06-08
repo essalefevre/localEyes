@@ -23,7 +23,7 @@ export default function App() {
               <img
                 src="/localeyes-logo.png"
                 alt="localEyes logo"
-                className="w-11 h-11 object-contain"
+                className="w-20 h-20 object-contain"
               />
               <span className="text-xs uppercase tracking-[0.2em] font-bold text-slate-500 font-display">
                 Project Showcase
