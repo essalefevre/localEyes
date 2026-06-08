@@ -3,6 +3,24 @@ import * as Icons from 'lucide-react';
 export default function App() {
   return (
     <div id="showcase-root" className="min-h-screen bg-[#FAF9F6] text-[#1E2129] font-sans antialiased selection:bg-teal-100 selection:text-teal-900 pb-20">
+      {/* Top Banner */}
+      <div className="w-full bg-[#2D5A27] py-4 px-6 flex items-center justify-between relative z-20">
+        <div className="flex items-center gap-4 max-w-5xl mx-auto w-full">
+          <img
+            src="/localeyes-logo.png"
+            alt="localEyes logo"
+            className="h-12 w-12 object-contain"
+          />
+          <div>
+            <h2 className="text-white font-display font-bold text-xl tracking-tight leading-none">
+              localEyes
+            </h2>
+            <p className="text-white/70 text-xs mt-0.5 tracking-wide">
+              Share experiences. Discover more.
+            </p>
+          </div>
+        </div>
+      </div>
       
       {/* Decorative Blueprint Grid Overlay */}
       <div className="absolute inset-x-0 top-0 h-[800px] pointer-events-none opacity-[0.02] select-none"
@@ -16,13 +34,11 @@ export default function App() {
       {/* Hero Header Space */}
       <header className="relative max-w-5xl mx-auto px-6 pt-16 md:pt-24 pb-8 border-b border-[#E1DEC9]/40 z-10">
         <div className="flex flex-col gap-6 mb-4">
-          
           <div className="space-y-4">
-            {/* Elegant Vector Logo */}
+
+            {/* Logo from image */}
             <div className="flex items-center gap-3">
-              <div 
-                className="w-11 h-11 rounded-xl bg-teal-950/5 border border-teal-950/10 flex items-center justify-center p-2 text-teal-800 shadow-sm"
-              >
+              <div className="w-11 h-11 rounded-xl bg-teal-950/5 border border-teal-950/10 flex items-center justify-center p-2 text-teal-800 shadow-sm">
                 <Icons.Eye size={22} className="stroke-[1.75]" />
               </div>
               <span className="text-xs uppercase tracking-[0.2em] font-bold text-slate-500 font-display">
@@ -38,20 +54,18 @@ export default function App() {
                 Created by <span className="font-semibold text-slate-800">Essa LeFevre</span>, <span className="font-semibold text-slate-800">Mahima Uliyar</span>, <span className="font-semibold text-slate-800">Jasmine Zhang</span>, <span className="font-semibold text-slate-800">Theresa Tran</span>, and <span className="font-semibold text-slate-800">Caitlyn Wadjaja</span>
               </p>
             </div>
-            
-            {/* Catchphrase Editable Placeholder */}
-            <div className="pt-2 max-w-2xl border-l-2 border-teal-600/40 pl-4 group">
-              <p className="text-lg text-slate-600 italic leading-relaxed">
-                "Insert your short, creative, and marketable catchphrase or key product concept tagline here — double-click to edit this in your source code."
-              </p>
-              <span className="text-[10px] font-bold tracking-wider text-teal-600/60 uppercase mt-1 block">
-                Catchphrase &amp; Slogan Placeholder
-              </span>
-            </div>
-          </div>
 
+            {/* Tagline from logo */}
+            <div className="pt-2 max-w-2xl border-l-2 border-teal-600/40 pl-4">
+              <p className="text-lg text-slate-600 italic leading-relaxed">
+                Share experiences. Discover more.
+              </p>
+            </div>
+
+          </div>
         </div>
       </header>
+
 
       {/* Main Grid View */}
       <main className="relative max-w-5xl mx-auto px-6 py-12 md:py-16 space-y-20 md:space-y-32 z-10">
@@ -63,9 +77,6 @@ export default function App() {
           <div className="bg-white border border-[#E9E5DE]/80 rounded-2xl p-8 relative flex flex-col justify-between shadow-sm group">
             <div className="space-y-5">
               <div className="flex items-center justify-between">
-                <span className="text-[10px] font-bold tracking-widest text-teal-700 uppercase">
-                  Statement A
-                </span>
                 <span className="p-1.5 rounded-lg bg-red-50 text-red-600 border border-red-100">
                   <Icons.AlertTriangle size={15} />
                 </span>
@@ -75,28 +86,28 @@ export default function App() {
                 <h3 className="text-xl font-display font-semibold tracking-tight text-slate-900">
                   Problem Statement
                 </h3>
-                <p className="text-xs text-slate-400">
-                  A concise analysis of user research findings and market gaps.
-                </p>
               </div>
 
-              {/* Blank Placeholder Core Body */}
-              <div className="border border-dashed border-[#DECEBE] bg-[#F7F3EB]/30 rounded-xl p-5 text-center min-h-[160px] flex flex-col justify-center items-center">
-                <Icons.Edit3 size={20} className="text-slate-400 mb-2 opacity-60" />
-                <p className="text-xs font-semibold text-slate-800 mb-0.5">Placeholder: Define User Need</p>
-                <p className="text-[11px] text-slate-400 max-w-[200px] leading-relaxed">
-                  Describe what your target demographic struggles with and what user research identified.
-                </p>
+              <div className="space-y-3">
+                {[
+                  "Too much travel information, not enough relevant insight.",
+                  "Difficult to know which recommendations actually fit your needs.",
+                  "Hidden local experiences are buried under popular, mainstream content.",
+                  "Most travel information online is sponsored or commercially biased.",
+                ].map((text, i) => (
+                  <div key={i} className="flex items-start gap-3 bg-red-50/50 border border-red-100/60 rounded-xl p-3">
+                    <span className="text-red-400 mt-0.5 shrink-0 text-base leading-none">▪</span>
+                    <p className="text-sm text-slate-600 leading-relaxed">{text}</p>
+                  </div>
+                ))}
               </div>
 
-              {/* Sub-bullets for process notes */}
-              <div className="space-y-2.5 pt-2">
-                <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Research Coordinates</span>
-                <div className="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
-                  <div className="h-full bg-teal-600/30 w-1/3" />
-                </div>
-                <p className="text-[10px] italic text-slate-450 leading-relaxed">
-                  (You can paste specific metrics or qualitative descriptors here inside App.tsx later.)
+              <div className="border-t border-slate-100 pt-4">
+                <span className="text-[9px] uppercase tracking-wider font-bold text-slate-400 block mb-1">
+                  Core User Pain
+                </span>
+                <p className="text-xs text-slate-500 italic">
+                  "Travelers are overwhelmed with noise and starved of authentic, trustworthy guidance."
                 </p>
               </div>
             </div>
@@ -106,9 +117,6 @@ export default function App() {
           <div className="bg-white border border-[#E9E5DE]/80 rounded-2xl p-8 relative flex flex-col justify-between shadow-sm group">
             <div className="space-y-5">
               <div className="flex items-center justify-between">
-                <span className="text-[10px] font-bold tracking-widest text-[#C96F53] uppercase">
-                  Statement B
-                </span>
                 <span className="p-1.5 rounded-lg bg-teal-50 text-teal-600 border border-teal-100">
                   <Icons.CheckCircle size={15} />
                 </span>
@@ -118,27 +126,27 @@ export default function App() {
                 <h3 className="text-xl font-display font-semibold tracking-tight text-slate-900">
                   Solution Statement
                 </h3>
-                <p className="text-xs text-slate-400">
-                  Your creative design intervention, proposed features, and user value-add.
-                </p>
               </div>
 
-              {/* Blank Placeholder Core Body */}
-              <div className="border border-dashed border-[#DECEBE] bg-[#F7F3EB]/30 rounded-xl p-5 text-center min-h-[160px] flex flex-col justify-center items-center">
-                <Icons.Target size={20} className="text-[#C96F53] mb-2 opacity-65" />
-                <p className="text-xs font-semibold text-slate-800 mb-0.5">Placeholder: Define Intervention</p>
-                <p className="text-[11px] text-slate-400 max-w-[200px] leading-relaxed">
-                  Pitch components and traits setting your solution apart from traditional answers.
-                </p>
+              <div className="space-y-3">
+                {[
+                  "A social travel platform where locals and travelers share trusted, first-hand recommendations.",
+                  "Helps users uncover authentic experiences and hidden gems beyond the tourist trail.",
+                  "Personalized discovery powered by your social network — friends, locals, and fellow travelers you trust.",
+                ].map((text, i) => (
+                  <div key={i} className="flex items-start gap-3 bg-teal-50/50 border border-teal-100/60 rounded-xl p-3">
+                    <span className="text-teal-500 mt-0.5 shrink-0 text-base leading-none">▪</span>
+                    <p className="text-sm text-slate-600 leading-relaxed">{text}</p>
+                  </div>
+                ))}
               </div>
 
-              {/* Pitch Quote space */}
               <div className="border-t border-slate-100 pt-4 text-center">
                 <span className="text-[9px] uppercase tracking-wider font-bold text-slate-400 block mb-1">
                   Value Pitch Statement
                 </span>
                 <p className="text-xs text-slate-500 italic">
-                  "Insert dynamic visionary quote pitching how this improves human lives."
+                  "As more people travel than ever before, localEyes connects them to the people and places that make every journey genuinely unforgettable."
                 </p>
               </div>
             </div>
@@ -153,35 +161,21 @@ export default function App() {
               Concept Video
             </span>
             <h2 className="text-2xl font-display font-bold tracking-tight text-[#161B21]">
-              Product Narrative &amp; Walkthrough
+              Product Narrative
             </h2>
-            <p className="text-xs text-slate-500">
-              A blank video placeholder framed for your storyboard presentation, demo filming, or physical roleplays.
-            </p>
           </div>
 
           <div className="max-w-3xl mx-auto">
-            <div className="relative overflow-hidden w-full aspect-video rounded-3xl border border-dashed border-[#CDCEBE] bg-[#F5F2EC]/40 flex flex-col items-center justify-center p-6 text-center select-none shadow-sm hover:bg-[#F5F2EC]/65 transition duration-300 group">
-              
-              {/* Fake player frame components represent a premium UI draft */}
-              <div className="w-16 h-16 rounded-full bg-[#161B21] border-2 border-[#E1DEC9] flex items-center justify-center text-white shadow-md hover:scale-105 duration-300 mb-4 cursor-default">
-                <Icons.Play size={20} className="ml-0.5 fill-current" />
-              </div>
-
-              <div className="space-y-1.5 max-w-sm">
-                <h4 className="font-bold text-sm text-[#1E2129]">
-                  Embedded Video Placeholder Frame
-                </h4>
-                <p className="text-xs text-slate-500 leading-relaxed">
-                  When you have finalized your Youtube, Vimeo, or screen-recording concept video, insert its <code className="bg-slate-100 p-0.5 px-1 rounded text-red-600 font-mono text-[10px]">&lt;iframe&gt;</code> element here to embed.
-                </p>
-              </div>
-
-              {/* Status footer for video indicator */}
-              <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-[10px] uppercase font-bold tracking-widest text-slate-400">
-                <span>0:00 / VIDEO DEMO</span>
-                <span>localEyes Concept Pitch</span>
-              </div>
+            <div className="relative overflow-hidden w-full aspect-video rounded-3xl border border-[#CDCEBE] bg-[#161B21] shadow-sm">
+              <video
+                className="w-full h-full object-cover rounded-3xl"
+                controls
+                loop
+                playsInline
+              >
+                <source src="/hci_2g.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </div>
           </div>
         </section>
@@ -375,7 +369,6 @@ export default function App() {
       <footer className="border-t border-[#E1DEC9]/45 mt-24 py-12 text-center text-xs opacity-65 text-slate-450 max-w-5xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
         <div className="text-left space-y-1">
           <p className="font-bold text-[#1E2129] font-display text-sm">localEyes Portfolio</p>
-          <p>Created as a clean static presentation showcase.</p>
         </div>
         <p>&copy; {new Date().getFullYear()} localEyes Team. All Academic Rights Reserved.</p>
       </footer>
