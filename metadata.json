@@ -1,0 +1,6 @@
+{
+  "name": "localEyes Project Showcase",
+  "description": "Single-page project showcase for localEyes, featuring details on project milestones, team rosters, problem definition, design thinking, and high-fidelity solution dashboards.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
